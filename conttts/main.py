@@ -13,6 +13,22 @@ import logging
 import re
 from num2words import num2words
 
+print("Starting this may take 20-120 seconds.")
+def run_gui():
+    import logging
+    import tkinter.messagebox as messagebox
+    try:
+        import numpy as np  # Required for recording
+        app = CoquiApp()
+        app.mainloop()
+    except ImportError as e:
+        logging.error(f"Missing required module: {str(e)}")
+        messagebox.showerror("Fatal Error", f"Missing required module: {str(e)}. Please install numpy.")
+    except Exception as e:
+        logging.error(f"Application failed to start: {str(e)}")
+        messagebox.showerror("Fatal Error", f"contTTS Studio failed to start: {str(e)}")
+
+
 # Set up logging
 logging.basicConfig(filename='contTTS_studio.log', level=logging.DEBUG, 
                     format='%(asctime)s - %(levelname)s - %(message)s')
@@ -535,13 +551,4 @@ class AboutFrame(ttk.Frame):
         logging.info("AboutFrame initialized")
 
 if __name__ == '__main__':
-    try:
-        import numpy as np  # Required for recording
-        app = CoquiApp()
-        app.mainloop()
-    except ImportError as e:
-        logging.error(f"Missing required module: {str(e)}")
-        messagebox.showerror("Fatal Error", f"Missing required module: {str(e)}. Please install numpy.")
-    except Exception as e:
-        logging.error(f"Application failed to start: {str(e)}")
-        messagebox.showerror("Fatal Error", f"contTTS Studio failed to start: {str(e)}")
+    run_gui()
