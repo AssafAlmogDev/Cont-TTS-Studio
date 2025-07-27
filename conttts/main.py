@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 import os
 import shutil
+print("Starting this may take 20-120 seconds.")
+print("Tips in ko-fi.com/assafusa553")
 import subprocess
 import threading
 from pydub import AudioSegment
@@ -15,8 +17,6 @@ from num2words import num2words
 import numpy as np
 
 def run_gui():
-    print("Starting this may take 20-120 seconds.")
-    print("Tips in ko-fi.com/assafusa553")
     import logging
     import tkinter.messagebox as messagebox
     try:
