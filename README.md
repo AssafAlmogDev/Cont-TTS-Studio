@@ -47,6 +47,8 @@ tkinter (comes with standard Python installations)
 
 shutil (standard library)
 
+If it didn't work you can just download it fully go to conttts/ and open main run it
+
 Support & Donations
 If you find contTTS Studio useful and want to support its development, please consider tipping me on Ko-fi:
 
